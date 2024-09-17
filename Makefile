@@ -57,7 +57,7 @@ docs/%.html : %.py etc/py2html.awk etc/b4.html docs/ezr.css Makefile ## make doc
 	  			 -o $@ 
 
 # another commaned
-Out=$(HOME)/tmp
+Out ?= $(HOME)/tmp
 Act ?= _mqs
 acts: ## experiment: mqs
 	mkdir -p ~/tmp
@@ -71,5 +71,15 @@ actb4: ## experiment: mqs
 		$(foreach f, $(wildcard $(Data)/$d/*.csv),   \
 				echo "python3 $(PWD)/ezr.py  -D -t $f -e $(Act)  | tee $(Out)/$(Act)/$(shell basename $f) & "; ))
 
+hw3: ## experiment: hw3
+	echo "11"
+	echo "mkdir -p $(Out)/$(Act)"
+	echo "rm $(Out)/$(Act)/*"
+	$(foreach d, config hpo misc process,         \
+		$(foreach f, $(wildcard $(Data)/$d/*.csv),   \
+				echo "python3 /workspaces/ezr/hw3/part1.py $f | tee $(Out)/$(Act)/$(shell basename $f) & "; ))
+
 fred:
 	echo $x
+# my own make file
+# e.g. make Act=dumb_vs_smart Out=/workspaces/ezr/hw3/tmp hw3 > /workspaces/ezr/hw3/tmp/branch.sh

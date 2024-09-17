@@ -813,6 +813,7 @@ class egs:
 
   def clusters1():
     d = DATA().adds(csv(the.train))
+    
     mid = d.mid()
     mids  = stats.SOME(txt="mid")
     somes  = [mids]
@@ -826,6 +827,8 @@ class egs:
             mids.add((mid[col.at] - want[col.at])/col.div())
           rows = d1.neighbors(want, train)[:k]
           got  = d.predict(want, rows, k=k) 
+          print(got)
+          assert 0
           for at,got1 in got.items():
             sd = d.cols.all[at].div()
             ks.add(  (want[at] - got1   )/sd)
@@ -833,6 +836,7 @@ class egs:
 
   def clusters2():
     d = DATA().adds(csv(the.train))
+    
     somes  = []
     mid1s  = stats.SOME(txt="mid-leaf")
     #mid0s  = stats.SOME(txt="mid-all")
@@ -1043,6 +1047,7 @@ class egs:
     print("\n"+the.train)
     repeats  = 20
     d        = DATA().adds(csv(the.train))
+   
     b4       = [d.chebyshev(row) for row in d.rows]
     asIs,div = medianSd(b4)
     rnd      = lambda z: z 
