@@ -348,6 +348,8 @@ def shuffle(self:DATA) -> DATA:
 @of("Sort rows by Chebyshev distance.")
 def chebyshevs(self:DATA) -> DATA:
   self.rows = sorted(self.rows, key=lambda r: self.chebyshev(r))
+  # print([self.chebyshev(r) for r in self.rows])
+  # print(self.rows)
   return self
 
 @of("Compute Chebyshev distance of one row to the best `y` values.")
