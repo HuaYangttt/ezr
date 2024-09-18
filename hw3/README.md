@@ -9,7 +9,7 @@ clone the repo with all branch:
     
 change to the 24Aug14 branch:
 
-    git checkout 24Aug14
+    git checkout -b 24Aug14 origin/24Aug14
     
 install python 13.3 (Linux and Github code spaces):
 
