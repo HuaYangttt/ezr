@@ -3,9 +3,13 @@
 
 ## setting up
 
-clone the repo:
+clone the repo with all branch:
 
-    https://github.com/HuaYangttt/ezr/tree/24Aug14
+    https://github.com/HuaYangttt/ezr.git
+    
+change to the 24Aug14 branch:
+
+    git checkout 24Aug14
     
 install python 13.3 (Linux and Github code spaces):
 
