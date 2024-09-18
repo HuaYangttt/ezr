@@ -42,6 +42,7 @@ Because there are two hypotheses:
 1. **JJR1**: Nothing works better than 50 random guessed for **low dimensional** problems (less than 6 x attributes).
 2. **JJR2**: But such random guessing is rubbish for **higher dimensional** data. 
 So we divided the results into two different tables, i.e., **low-dimensional one (< 6 attributes)** and **higher-dimensional one (≥ 6 attributes)**.
+
 In each table, we use the following notations:
 - We use **smart** to denote results from active learning and **dumb** to denote results from random guessing.
 - We use **asIs** to denote the baseline result against which everything else is compared.
@@ -86,5 +87,6 @@ We also converted the original numbers into percentages for clarity.
 ## conclusion
 
 Since we observed ***Point 1*** and ***Point 2***, we doubt the JJR1 hypothesis.
+
 Since we observed ***Point 3*** and ***Point 4***, we confirm the JJR2 hypothesis.
 
