@@ -1,7 +1,7 @@
 
 # This is the repo for hw3 of Hua Yang
 
-## Setting Up
+## setting up
     cd /workspaces/ezr/hw3
 
 ## running code tests
