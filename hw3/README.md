@@ -59,7 +59,9 @@ In each table, we use the following notations:
 Because there are two hypotheses:
 1. **JJR1**: Nothing works better than 50 random guessed for **low dimensional** problems (less than 6 x attributes).
 2. **JJR2**: But such random guessing is rubbish for **higher dimensional** data. 
+
 So we divided the results into two different tables, i.e., **low-dimensional one (< 6 attributes)** and **higher-dimensional one (≥ 6 attributes)**.
+
 We also converted the original numbers into percentages for clarity.
 
 ### JJR1: in low dimensional data, random guessing (50 random guessed) works better than active learning.
