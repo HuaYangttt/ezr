@@ -32,7 +32,7 @@ class TestGuessFunctionality:
         N = 3
         # check the length of dumb list
         dumb_list = guess(N, self.data)
-        assert len(dumb_list) == N, "dumb list length is incorrect"
+        assert len(dumb_list.rows) == N, "dumb list length is incorrect"
         
         # check the length of smart list
         smart_list = [self.data.shuffle().activeLearning()[0] for _ in range(N)]

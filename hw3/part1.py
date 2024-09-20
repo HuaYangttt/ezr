@@ -11,7 +11,7 @@ def guess(N, data):
     some = random.sample(data.rows, N)
     
     # Clone the data and add the picked rows, then sort on Chebyshev distance
-    sorted_rows = data.clone(some).chebyshevs().rows
+    sorted_rows = data.clone().adds(some).chebyshevs()
 
     # print(sorted_rows)
 
@@ -51,11 +51,12 @@ if __name__ == '__main__':
         for N in [20,30,40,50]:
             #result_dumb  = stats.SOME(txt=f"{data_name[:-4]}_dumb_{N}")
             #result_smart  = stats.SOME(txt=f"{data_name[:-4]}_smart_{N}")
-            result_dumb  = stats.SOME(txt=f"dumb_{N}_{dim_flag}")
-            result_smart  = stats.SOME(txt=f"smart_{N}_{dim_flag}")
+            result_dumb  = stats.SOME(txt=f"dumb_{dim_flag},{N}")
+            result_smart  = stats.SOME(txt=f"smart_{dim_flag},{N}")
             somes += [result_dumb]
             somes += [result_smart]
-
+            
+            
             dumb = [guess(N,d) for _ in range(20)]
             # print(dumb)
             # for lst in dumb:
@@ -65,7 +66,7 @@ if __name__ == '__main__':
             #     print(d.chebyshev( lst[2] ))
             #     assert 0
             #print(dumb[0][0])
-            dumb = [d.chebyshev( lst[0] ) for lst in dumb]
+            dumb = [d.chebyshev( lst.rows[0] ) for lst in dumb]
             #result_dumb.add(dumb)
             
             for result in dumb:
